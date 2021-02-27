@@ -1,0 +1,5 @@
+FROM openjdk:8-jre-alpine
+WORKDIR /temp
+EXPOSE 9095
+ADD target/CATEGORY-K8-0.0.1-SNAPSHOT.jar CATEGORY-K8-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","CATEGORY-K8-0.0.1-SNAPSHOT.jar"]

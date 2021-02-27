@@ -1,0 +1,5 @@
+FROM openjdk:8-jre-alpine
+WORKDIR /temp
+EXPOSE 8761
+ADD target/EUREKA-API-0.0.1-SNAPSHOT.jar EUREKA-API-0.0.1-SNAPSHOT.jar
+ENTRYPOINT ["java","-jar","EUREKA-API-0.0.1-SNAPSHOT.jar"]

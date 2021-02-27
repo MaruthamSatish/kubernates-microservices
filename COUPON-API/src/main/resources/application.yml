@@ -1,0 +1,35 @@
+server:
+  port: 9090
+spring:
+  application:    name: COUPON-API
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1
+
+  datasource:
+     password: ${RDS_PASSWORD:root}
+     url: jdbc:mysql://${RDS_HOSTNAME:localhost}:${RDS_PORT:3306}/${RDS_DB_NAME:microservices}
+     username: ${RDS_USERNAME:root}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+  
+eureka:
+  client:
+    fetchRegistry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    instance-id: ${spring.application.name}
+    preferIpAddress: true
+    hostname: localhost
+    
+
+      
+
+
+

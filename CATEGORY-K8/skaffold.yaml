@@ -1,0 +1,14 @@
+apiVersion: skaffold/v2beta11
+kind: Config
+metadata:
+  name: category-k-
+build:
+  artifacts:
+  - image: satishlakshmireddy/category-k8
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - CATEGORY-K8-POD.yml
+    - CATEGORY-K8-SERV.yml

@@ -1,0 +1,31 @@
+server:
+  port: 9094
+
+spring:
+  application:
+    name: GATEWAY-API
+  zipkin:
+    base-url: http://localhost:9411/
+  sleuth:
+    sampler:
+      probability: 1
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+
+      
+
+eureka:
+  client:
+    fetchRegistry: true
+    register-with-eureka: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    instance-id: ${spring.application.name}
+    preferIpAddress: true
+    hostname: localhost
+
