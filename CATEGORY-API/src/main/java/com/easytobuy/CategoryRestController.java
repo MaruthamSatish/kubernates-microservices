@@ -52,7 +52,7 @@ public class CategoryRestController {
 	public ResponseEntity<List<Category>> findByCouponCode(@PathVariable("categoryName") String categoryName) {
 		List<Category> getCategories = categoryRepository.findByCategoryName(categoryName);
 		if (getCategories.isEmpty()) {
-			System.out.println("Updated");
+			System.out.println("Updated::::::::::");
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<List<Category>>(getCategories, HttpStatus.OK);
