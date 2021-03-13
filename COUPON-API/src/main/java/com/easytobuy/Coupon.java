@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- * @author chiru
+ * @author Satish Reddy
  *
  */
 @Entity
